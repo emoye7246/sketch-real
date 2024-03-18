@@ -1,9 +1,17 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-    createBoard(16);
+    let size = getSize();
+    createBoard(size);
+
+  
 
 
 })
+
+function countGraph() {
+    let size = getSize();
+    createBoard(size);
+}
 
 function createBoard(size) {
     let board = document.querySelector(".board");
@@ -17,5 +25,19 @@ function createBoard(size) {
         let div = document.createElement("div");
         div.classList.add("squares");
         board.insertAdjacentElement("beforeend", div);
+    }
+}
+
+function getSize() {
+    let userInput = window.prompt("Choose a number between 1-100");
+    
+    let choice = document.querySelector(".message");
+    
+    if (userInput === "") {
+        choice.textContent = "Please choose a number a between 1 and 100";
+    }
+
+    else if (userInput >= 1 || userInput <= 100) {
+        return userInput;
     }
 }

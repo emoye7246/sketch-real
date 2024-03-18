@@ -16,3 +16,9 @@ body {
 .squares:hover{
     background-color: red;
 }
+
+button {
+    display: flex;
+    margin-bottom: 10px;
+}
+
