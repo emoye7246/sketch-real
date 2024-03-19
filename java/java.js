@@ -1,3 +1,8 @@
+let color = window.prompt();
+let board = document.querySelector(".board");
+let div = document.createElement("div");
+div.classList.add("brush");
+
 
 document.addEventListener("DOMContentLoaded", function() {
     let size = getSize();
@@ -24,9 +29,14 @@ function createBoard(size) {
     for (i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
         div.classList.add("squares");
+        div.addEventListener("click", function(){
+            div.style.backgroundColor = `${color}`;
+        })
         board.insertAdjacentElement("beforeend", div);
     }
+        
 }
+
 
 function getSize() {
     let userInput = window.prompt("Choose a number between 1-100");
@@ -40,4 +50,15 @@ function getSize() {
     else if (userInput >= 1 || userInput <= 100) {
         return userInput;
     }
+}
+// This is how you create a reset function
+function graphReset() {
+    let divs = document.querySelectorAll("div")
+
+    divs.forEach(div => div.style.backgroundColor = 'white');
+}
+
+function getColor(){
+    let color = window.prompt();
+    return color;
 }

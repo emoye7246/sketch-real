@@ -13,12 +13,17 @@ body {
     width: 400px;
 }
 
-.squares:hover{
-    background-color: red;
-}
+
 
 button {
     display: flex;
     margin-bottom: 10px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+    margin-top: 20px;
 }
 
